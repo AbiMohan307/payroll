@@ -1,0 +1,79 @@
+CREATE TABLE `address` (
+  `emp_id` varchar(20) NOT NULL,
+  `door_no` varchar(45) DEFAULT NULL,
+  `street` varchar(45) DEFAULT NULL,
+  `city` varchar(45) NOT NULL,
+  `state` varchar(45) NOT NULL,
+  `pincode` varchar(45) NOT NULL,
+  KEY `emp_id_idx` (`emp_id`),
+  CONSTRAINT `empid` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`)
+);
+
+INSERT INTO `address` VALUES ('1','3B','T-nagar','Chennai','Tamilnadu','600 607');
+
+
+
+CREATE TABLE `attendance` (
+  `emp_id` varchar(20) NOT NULL,
+  `hours_worked` decimal(10,2) NOT NULL,
+  KEY `eid_idx` (`emp_id`),
+  CONSTRAINT `eid` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`)
+);
+
+INSERT INTO `attendance` VALUES ('1',46.00);
+
+
+CREATE TABLE `designation` (
+  `designation_id` int(11) NOT NULL,
+  `designation_name` varchar(45) NOT NULL,
+  `per_hour_salary` decimal(20,2) NOT NULL,
+  PRIMARY KEY (`designation_id`)
+);
+
+INSERT INTO `designation` VALUES (1,'UI designer',99.00),(2,'Database designer',110.00),(3,'Full Stack Developer',120.00),(4,'Front end designer',90.00);
+
+
+
+CREATE TABLE `employee` (
+  `emp_id` varchar(40) NOT NULL,
+  `emp_name` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `mobile_no` varchar(45) NOT NULL,
+  `joining_date` date NOT NULL,
+  `designation_id` int(11) NOT NULL,
+  `experience` decimal(5,2) NOT NULL,
+  PRIMARY KEY (`emp_id`),
+  KEY `designation_id_idx` (`designation_id`),
+  CONSTRAINT `designation_id` FOREIGN KEY (`designation_id`) REFERENCES `designation` (`designation_id`)
+);
+
+
+INSERT INTO `employee` VALUES ('1','Abi','123','a@gmail.com','9442152795','2017-05-02',1,2.00);
+
+
+
+CREATE TABLE `rating` (
+  `emp_id` varchar(20) NOT NULL,
+  `h1_rating` int(11) DEFAULT NULL,
+  `h2_rating` int(11) DEFAULT NULL,
+  KEY `emp_id_idx` (`emp_id`),
+  CONSTRAINT `emp_id` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`)
+);
+
+
+insert into 'rating' values('1',2,3);
+
+
+
+CREATE TABLE `salary` (
+  `e_id` varchar(20) NOT NULL,
+  `ctc` decimal(20,2) NOT NULL,
+  `designation_id` int(11) NOT NULL,
+  KEY `designationid_idx` (`designation_id`),
+  CONSTRAINT `designationid` FOREIGN KEY (`designation_id`) REFERENCES `designation` (`designation_id`)
+);
+
+
+INSERT INTO `salary` VALUES ('1',330000.00,1);
+
