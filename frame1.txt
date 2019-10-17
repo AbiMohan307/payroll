@@ -1,0 +1,166 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+	font-family: "Lato", sans-serif;
+background:url("https://img.freepik.com/free-vector/spot-light-background_1284-4685.jpg?size=626&ext=jpg");
+      width: 100:
+      position : absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  <%--background-color: rgba(255, 255, 255, .4);--%>
+  position: fixed;
+  height: 100%;
+  overflow-x:hidden;
+  z-index=1;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  outline:none;
+  cursor:pointer;
+}
+ .sidebar a.selected {
+   color:pink;
+   background:LightGray;
+ }
+ 
+.sidebar a:active {
+  background-color: LightGray;
+  color: white;
+  
+}
+
+.sidebar a:hover:(.active) {
+  background-color: LightGray;
+  color: white;
+}
+
+/* @media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+} */
+
+.dropbtn {
+  background-color: (255,0,0,0.3) ;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border:  none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color:  rgba(192,192,192,0.3);
+}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<div class="dropdown">
+<button class="dropbtn">Persnol details</button>
+  <div class="dropdown-content">
+  <a href="UpdateProfileDisplay.jsp">View Profile</a>
+  <a href="UpdateProfileEnterDetails.jsp">Update</a>
+  <a href="#">Link 3</a>
+  </div>
+  <br/>
+  
+  <br/>
+  </div>
+  <div class="dropdown">
+  <button class="dropbtn">My Transactions</button>
+  <div class="dropdown-content">
+  <a href="payslip.jsp">Payslip</a>
+  <a href="mboDisplay.jsp">MBO</a>
+
+  
+</div>
+<br/>
+
+<br/>
+  </div>
+  <div class="dropdown">
+  <button class="dropbtn">Reimbesment</button>
+  <div class="dropdown-content">
+  <a href="####">Upload bills</a>
+  <a href="#####">View</a>
+  </div>
+</br>
+</br>
+</div>  
+ 
+ <div class="dropdown">
+  <button class="dropbtn">Password</button>
+  <div class="dropdown-content">
+  <a href="setpassword.jsp">Change Password </a>
+  </div>
+</br>
+</br>
+</div>  
+ 
+ 
+ <%--  <a href="display" target = "f2" class="active">Profile</a>
+  <a href="change" target = "f2">Change Password</a>
+  <a href="mbo" target = "f2">MBO Payout</a>
+  <a href="payslip" target = "f2">Generate payslip</a>
+   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i> 
+  </a>--%>
+</div>
+</body>
+</html>

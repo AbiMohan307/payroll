@@ -1,0 +1,166 @@
+
+  
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+body,
+#slider,
+.wrap,
+.slide-content {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.wrap {
+  position: relative;
+}
+
+.slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide1 {
+  background-image: url("https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+}
+.slide2 {
+  background-image: url("http://www.dreamtemplate.com/blog/wp-content/uploads/2011/06/pic1-a36.jpg");
+}
+.slide3 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn_zHgMeBbdKYB6ULuYR98ojkiR2uMuL7rlwKLR6UdMDYZit3V");
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slide-content span {
+  font-size: 5rem;
+  color: #fff;
+}
+
+
+
+.button {
+  background-color: rgba(248, 247, 216, 0.7);
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+</style>
+<body>
+<form action="login" method="get">
+<div class="wrap">
+ 
+  <div id="slider">
+    <div class="slide slide1 fade">
+      <div class="slide-content">
+        <span>Welcome</span>
+      
+        <input type="submit" class="button" value="Get Started"> 
+         
+      </div>
+    </div>
+    <div class="slide slide2 fade">
+      <div class="slide-content">
+        <span>Welcome</span>
+         <input type="submit" class="button" value="Get Started">
+      </div>
+    </div>
+    <div class="slide slide3 fade">
+      <div class="slide-content">
+        <span>Welcome</span>
+        
+        <input type="submit" class="button" value="Get Started">
+      </div>
+    </div>
+  </div>
+  
+</div>
+</form>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("slide");
+ 
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+ 
+  slides[slideIndex-1].style.display = "block";  
+  
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script> 
+</body>
+
+</html>
