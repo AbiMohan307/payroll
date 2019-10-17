@@ -77,3 +77,8 @@ CREATE TABLE `salary` (
 
 INSERT INTO `salary` VALUES ('1',330000.00,1);
 
+
+create table reimbursement(emp_id varchar(25), pay_component varchar(50),annual_plan decimal(7,2),available_amount decimal(7,2));
+
+insert into reimbursement values('1','Medical',15000,15000),('1','Transport',12000,12000),('1','Telephone',10000,10000);
+
