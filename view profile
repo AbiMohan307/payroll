@@ -1,0 +1,70 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+     <%@ page import="com.virtusa.payroll.model.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+</style>
+
+</head>
+<body style='background-color: ;'>
+	
+<form:form modelAttribute="employee" action="updateProcess" method="post">
+<form:form modelAttribute="add"  action="updateProcess" method="post">
+<div class="card">
+
+	<div class='form-style-5'>
+	
+		<h2 align='center'>Personal Details</h2>
+		<table align='center' style='font-size:16px;' cellpadding='17' cellspacing='17'>
+			<tr>
+        		<td><b>Name</b></td>
+        		<td>${employee.emp_name } </td>
+        	</tr>
+        	<tr>
+        		<td><b>Email</b></td>
+        		<td>${employee.email }</td>
+        	</tr>
+        	<tr>
+        		<td><b>Address</b></td>
+        		<td>${address.door_no}, ${address.street}, ${address.city}, ${address.state}, ${address.pincode}</td>
+        	</tr>
+        	<tr>
+        		<td><b>Contact number</b></td>
+        		<td>${employee.mobile_no }</td>
+        	</tr>
+        	<tr>
+        		<td><b>Experience</b></td>
+        		<td>${employee.experience }</td>
+        	</tr>
+        </table>
+	</div>
+	</div>
+
+
+</form:form>
+</form:form>
+</body>
+</html>
